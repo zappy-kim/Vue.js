@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Hello world!!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> // 뷰 라이브러리 파일 로딩. 없으면 실행되지 않음 </script> 
+</head> 
+<body> 
+    <div id = "app"> 
+        {{message}} 
+    </div>  
+
+    <script>
+        new Vue({
+            el : "#app", // el속성 : id 는 #으로 표시. 위의 id 이름과 동일해야 실행. 여러개의 vue를 만들어도 각각 이름이 같아야 실행됨 
+            data : {
+                message : "Hello WORLD" // data 속성: vue 인스턴스가 생성되면서 message 값이 {{message}} 와 치환됨  
+                // div 유효범위 안에 있어야만 {{message}} 가 작동함
+        }
+    })
+    </script>
+</body>
+</html>
