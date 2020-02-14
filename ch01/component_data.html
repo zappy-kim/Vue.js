@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>상위 하위 컴포넌트간 데이터 전달</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script> 
+</head>
+<body>
+    <div id ="app">
+        <child-component v-bind:propsdata="message"></child-component>
+        <!--propsdata부분은 aa 등 다른 이름으로 변경가능. 단, 하위 props와 일치해야 함-->
+    </div>
+    
+    <script>
+        Vue.component('child-component', {
+            props : ['propsdata'],
+            template : "<p>{{ propsdata }}</p>"
+        })
+
+        var app = new Vue({
+            el : "#app",
+            data :{
+                message : "Parent Component"
+            }
+        })
+    </script>
+</body>
+</html>
